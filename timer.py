@@ -7,11 +7,13 @@
 
 if __name__ == "__main__":
     from time import sleep
-    import subprocess
-    import argparse
-    parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter,
+    from subprocess import call
+    from argparse import ArgumentParser, RawDescriptionHelpFormatter
+
+    parser = ArgumentParser(formatter_class=RawDescriptionHelpFormatter,
                                      description=
-'''Set a countdown timer, then execute a subprocess to play some audio. 
+'''
+Set a countdown timer, then execute a subprocess to play some audio. 
 The function or method of generating audio must be configured within this script.
 
 Usage:
@@ -20,7 +22,7 @@ Usage:
     $ python timer.py 0 -s 30     # 30 second timer
     $ python timer.py -s 999 0    # 999 second timer
 
-Cancel timer or sound with Ctrl-c
+** Cancel timer or sound with ctrl-c
 
 
 ''')
@@ -28,13 +30,16 @@ Cancel timer or sound with Ctrl-c
     parser.add_argument('-s', type=int, help='<the number of seconds to countdown>',
                         required=False, metavar='seconds')
     parser.add_argument('minutes', help='<the number of minutes to countdown>', type=int)
-                        
 
     parser.set_defaults(s=0)
     args = parser.parse_args()
-
     total_seconds = (args.minutes * 60) + args.s
-    sleep(total_seconds)
 
-    # how I personally generate sound
-    subprocess.call('/Users/me/bin/chuck /Users/me/chuck/alarms/moe.ck', shell=True)
+    try:
+        sleep(total_seconds)
+        # how I personally generate sound
+        call('chuck moe.ck', shell=True)
+    except KeyboardInterrupt:
+        print
+        
+        
