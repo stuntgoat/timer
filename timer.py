@@ -35,9 +35,13 @@ Usage:
     total_seconds = (args.minutes * 60) + args.s
 
     try:
+        # comment next line after configuring audio playback
+        print("Configure audio playback inside timer.py!!!")
+
         sleep(total_seconds)
-        # how I personally generate sound
-        call('chuck moe.ck', shell=True)
+
+        # how I personally generate sound. Edit to your preference
+        call('/Users/me/bin/chuck /Users/me/chuck/alarms/moe.ck', shell=True)
     except KeyboardInterrupt:
         print
         
