@@ -22,8 +22,7 @@ Usage:
     $ python timer.py 0 -s 30     # 30 second timer
     $ python timer.py -s 999 0    # 999 second timer
 
-** Cancel timer or sound with ctrl-c
-
+** Cancel timer or subprocess with ctrl-c
 
 ''')
 
