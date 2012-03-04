@@ -9,9 +9,10 @@ Usage:
 
 ** Cancel timer or subprocess with ctrl-c
 
-positional arguments:
-  minutes     <the number of minutes to countdown>
+    positional arguments:
+        minutes     <the number of minutes to countdown>
 
-optional arguments:
-  -h, --help  show this help message and exit
-  -s seconds  <the number of seconds to countdown>
+    optional arguments:
+
+        -h, --help  show this help message and exit
+        -s seconds  <the number of seconds to countdown>
